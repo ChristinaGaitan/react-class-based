@@ -14,9 +14,15 @@ class UserFinder extends Component {
     super(props);
 
     this.state = {
-      filteredUsers: DUMMY_USERS,
+      filteredUsers: [],
       searchTerm: "",
     };
+  }
+
+  componentDidMount() {
+    // Send http request
+    // Run once, when the component was mounted for the first time
+    this.setState({ filteredUsers: DUMMY_USERS });
   }
 
   componentDidUpdate(prevProps, prevState) {
